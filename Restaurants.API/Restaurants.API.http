@@ -4,6 +4,28 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/1
+GET {{Restaurants.API_HostAddress}}/api/restaurants/2
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json; charset=utf-8
+
+{
+  "Name": "FireWok",
+  "Description": "Spicy dishes",
+  "Category": "Street food",
+  "HasDelivery": true,
+  "ContactEmail": "Info@gmail.com",
+  "ContactNumber": "571-671-671",
+  "City": "Tbilisi",
+  "Street": "Shalva Dadiani",
+  "PostalCode": "12-934"
+}
+
+###
+
+GET https://localhost:7203/api/restaurants/7
+
 
 ###

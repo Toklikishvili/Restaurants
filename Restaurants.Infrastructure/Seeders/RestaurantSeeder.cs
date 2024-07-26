@@ -18,7 +18,7 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
         }
     }
 
-    private IEnumerable<Restaurant> GetRestaurants()
+    private static IEnumerable<Restaurant> GetRestaurants()
     {
         List<Restaurant> restaurants =
             [
@@ -56,11 +56,28 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
 
             new ()
             {
-                Name = "McDonald",
+                Name = "McDonald's",
                 Category = "FastFood",
                 Description = "McDonald is junk food like KFC",
                 ContactEmail = "contactEmali@mcdonald.com",
                 HasDelivery = true,
+                Dishes =
+                [
+                    new()
+                    {
+                        Name = "Chesse Burger",
+                        Description = "Burger with chesse",
+                        Price = 15.50M,
+                    },
+
+                    new()
+                    {
+                        Name = "Fries",
+                        Description = "Fried potatoes in oil",
+                        Price = 7.8M,
+                    },
+                 ],
+
                 Address = new()
                 {
                     City = "Tbilisi",
