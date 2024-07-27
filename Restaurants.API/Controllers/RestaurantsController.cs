@@ -1,17 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Restaurants.Application.Restaurants;
-using Restaurants.Application.Restaurants.Dtos;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
+using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
+using Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
+using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
 
 namespace Restaurants.API.Controllers
 {
     [ApiController]
     [Route("api/restaurants")]
-    public class RestaurantsController(IRestaurantsService restaurantsService) : ControllerBase
+    public class RestaurantsController : ControllerBase
     {
+        private readonly IMediator _mediator;
+
+        public RestaurantsController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var restaurants = await restaurantsService.GetAllRestaurants();
+            var restaurants = await _mediator.Send(new GetAllRestaurantsQuery());
 
             return Ok(restaurants);
         }
@@ -19,20 +29,30 @@ namespace Restaurants.API.Controllers
         [HttpGet("{Id}")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var restaurants = await restaurantsService.GetById(id);
-            if (restaurants != null)
-                return Ok(restaurants);
+            var restaurants = await _mediator.Send(new GetRestaurantByIdQuery(id));
 
+            if (restaurants is null)
                 return NotFound();
+            return Ok(restaurants);
+        }
+
+        [HttpDelete("{Id}")]
+        public async Task<IActionResult> DeleteRestaurant([FromRoute] int id)
+        {
+            var isDeleted = await _mediator.Send(new DeleteRestaurantCommand(id));
+
+            if (isDeleted)
+                return NoContent();
+            return NotFound();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantDto createRestaurantDto)
+        public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command)
         {
-            int id = await restaurantsService.Create(createRestaurantDto);
+            int id = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(GetById), new { id }, null);
+            return CreatedAtAction(nameof(GetById) , new { id } , null);
         }
     }
 }
-    
+

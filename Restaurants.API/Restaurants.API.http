@@ -12,9 +12,9 @@ POST {{Restaurants.API_HostAddress}}/api/restaurants
 Content-Type: application/json; charset=utf-8
 
 {
-  "Name": "FireWok",
+  "Name": "Test",
   "Description": "Spicy dishes",
-  "Category": "Street food",
+  "Category": "Georgian",
   "HasDelivery": true,
   "ContactEmail": "Info@gmail.com",
   "ContactNumber": "571-671-671",
@@ -25,7 +25,10 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-GET https://localhost:7203/api/restaurants/7
+GET https://localhost:7203/api/restaurants/8
 
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/8
 
 ###

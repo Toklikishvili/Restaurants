@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repsitories;
 using Restaurants.Infrastructure.Persistence;
@@ -13,6 +14,12 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
         await dbContext.SaveChangesAsync();
 
         return entity.Id;
+    }
+
+    public async Task DeleteRestaurant(Restaurant entity)
+    {
+        dbContext.Remove(entity);
+        await dbContext.SaveChangesAsync();
     }
 
     public async Task<IEnumerable<Restaurant>> GetAllAsync()
