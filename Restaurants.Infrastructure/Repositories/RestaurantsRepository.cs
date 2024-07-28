@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repsitories;
 using Restaurants.Infrastructure.Persistence;
@@ -37,4 +36,6 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
 
         return restaurants;
     }
+
+    public async Task SaveChanges() => await dbContext.SaveChangesAsync();
 }
