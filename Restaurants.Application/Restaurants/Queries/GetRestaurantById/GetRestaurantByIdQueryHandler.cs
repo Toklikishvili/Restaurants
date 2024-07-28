@@ -20,9 +20,9 @@ public class GetRestaurantByIdQueryhandler : IRequestHandler<GetRestaurantByIdQu
         _restaurantsRepository = restaurantsRepository;
     }
 
-    public async Task<RestaurantsDto> Handle(GetRestaurantByIdQuery request , CancellationToken cancellationToken)
+    public async Task<RestaurantsDto?> Handle(GetRestaurantByIdQuery request , CancellationToken cancellationToken)
     {
-        _logger.LogInformation($"Getting restaurant by Id: {request.Id}");
+        _logger.LogInformation("Getting restaurant by Id: {RestaurantId}" , request.Id);
         var restaurants = await _restaurantsRepository.GetByIdAsync(request.Id);
         var restaurantDto = _mapper.Map<RestaurantsDto?>(restaurants);
 
