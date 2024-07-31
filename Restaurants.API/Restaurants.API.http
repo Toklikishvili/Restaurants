@@ -9,7 +9,7 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/124
 ###
 
 
-GET https://localhost:7203/api/restaurants/8
+GET https://localhost:7203/api/restaurants/4
 
 ###
 
@@ -18,13 +18,25 @@ DELETE {{Restaurants.API_HostAddress}}/api/restaurants/8
 ###
 
 
-PATCH {{Restaurants.API_HostAddress}}/api/restaurants/7
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/10
 Content-Type: application/json; charset=utf-8
 
 {
   "Name": "Test123",
   "Description": "Test dishes123",
   "HasDelivery": false
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/4/dishes
+Content-Type: application/json
+
+{
+  "Name": "Spaghetti Carbonara",
+  "Description": "Italian pasta with cheese",
+  "Price": 23.7,
+  "KiloCalories": 750
 }
 
 ###
