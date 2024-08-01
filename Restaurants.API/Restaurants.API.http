@@ -29,7 +29,7 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/api/restaurants/4/dishes
+POST {{Restaurants.API_HostAddress}}/api/restaurants/5/dishes
 Content-Type: application/json
 
 {
@@ -41,6 +41,10 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/4/dishes/6
+GET {{Restaurants.API_HostAddress}}/api/restaurants/5/dishes/
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/4/dishes
 
 ###
