@@ -4,7 +4,7 @@ using Restaurants.Domain.Entities;
 using Restaurants.Domain.Exceptions;
 using Restaurants.Domain.Repsitories;
 
-namespace Restaurants.Application.Dishes.Commands.DeleteDish;
+namespace Restaurants.Application.Dishes.Commands.DeleteDishes;
 
 public class DeleteDishesForRestaurantCommandHandler : IRequestHandler<DeleteDishesForRestaurantCommand>
 {
@@ -23,7 +23,7 @@ public class DeleteDishesForRestaurantCommandHandler : IRequestHandler<DeleteDis
 
     public async Task Handle(DeleteDishesForRestaurantCommand request , CancellationToken cancellationToken)
     {
-        _logger.LogWarning("Delete dish from restaurant with Id: {RestaurantId}" , request.RestaurantId);
+        _logger.LogWarning("Removing all dish from restaurant with Id: {RestaurantId}" , request.RestaurantId);
 
         var restaurant = await _restaurantsRepository.GetByIdAsync(request.RestaurantId)
             ?? throw new NotFoundException(nameof(Restaurant) , request.RestaurantId.ToString());
