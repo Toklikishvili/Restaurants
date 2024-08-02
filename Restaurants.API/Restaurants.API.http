@@ -29,11 +29,11 @@ Content-Type: application/json; charset=utf-8
 
 ###
 
-POST {{Restaurants.API_HostAddress}}/api/restaurants/5/dishes
+POST {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes
 Content-Type: application/json
 
 {
-  "Name": "Spaghetti Carbonara",
+  "Name": "Spaghetti boloneze",
   "Description": "Italian pasta with cheese",
   "Price": 23.70,
   "KiloCalories": 750
@@ -41,7 +41,7 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/22
 
 ###
 
