@@ -92,3 +92,12 @@ Content-Type: application/json
 }
 
 ###
+
+DELETE {{Restaurants.API_HostAddress}}/api/identity/deleteRole
+Authorization: Bearer {{Token}}
+
+{
+  "userEmail": "Toklika@gmail.com",
+  "roleName": "User"
+}
+###

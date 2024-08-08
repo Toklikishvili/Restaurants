@@ -7,8 +7,8 @@ using Restaurants.Domain.Exceptions;
 namespace Restaurants.Application.Users.Command.AssignUserRole;
 
 public class AssignUserRoleCommandHandler(ILogger<AssignUserRoleCommandHandler> logger ,
-    UserManager<User> userManager ,
-    RoleManager<IdentityRole> roleManager) : IRequestHandler<AssignUserRoleCommand>
+                                          UserManager<User> userManager ,
+                                          RoleManager<IdentityRole> roleManager) : IRequestHandler<AssignUserRoleCommand>
 {
     public async Task Handle(AssignUserRoleCommand request , CancellationToken cancellationToken)
     {
@@ -18,7 +18,7 @@ public class AssignUserRoleCommandHandler(ILogger<AssignUserRoleCommandHandler> 
 
         var role = await roleManager.FindByNameAsync(request.RoleName)
             ?? throw new NotFoundException(nameof(IdentityRole) , request.RoleName);
-
+        
         await userManager.AddToRoleAsync(user , role.Name!);
     }
 }
