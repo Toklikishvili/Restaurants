@@ -1,5 +1,5 @@
 @Restaurants.API_HostAddress = https://localhost:7203
-@Token = CfDJ8HP9Jeg4IllClSoVbawfrq0Y-wal8TvQrBHvE7wFluXGL-nMfNmSAiHwwW4o-Pw7Z5dM7zC-sIxxcVj2VdJ058LpXxG04x1t9gXULp5wp73MZeY03dfPkqL9r2LHMITCRxxuOw3dvoogLxTvd0PotfBWpsioBjJvauU_mJyfv0O3rYmEA4sGktytT2bJgjMfn4hYMxBor1eODJj-9ajzIXhJpHPP7j0UKBysWO-wIZdH4iEmWX0h4uy0zct1Vi7_UStXDhq87cVH2XqZtWCfLx1Yb3vMVYHmHSkV6fA7m-HFhZni4HTn4Wl7hw0SxsL8BodHIENEOuhfb_N2Y9iS05uh7Ju_aOKxwT8BV4_A_zePvmPnerFsnWHR7T05kOOIIUhCgtA9-J3WotHcEcjpy-j2zI6u7rdCrXWBCNI2p_AaIQtzswGgO-jpe-zlk3b9BM19Su1dEm-gSK3ZzQIJT1HXLG2CAcCLSDdc2x91RvK4Gygvi0fCuQ85q3bAhXTt6atPcYlFStDaQtMyDQJUq3DhO1KN2Uk8Ly9x3l-Jas5WD47Szy7RMcBo_LQDBbKY6JXgFJ-iS_1YKufx3f0gCEGRcKNWUlbvAzIya-Fcj9xrDVIM_MSiT2yrFSVmfVSZKz_ZgXUmIGCjJuV154sZIvnUB1eNxcbpzifqMf9bkGTuYGcovlEQPNTS93tHHcH6VP-1ud6ayDpdm02WAiYUpKxtHGKG-65jNEbAGG2AOsbHRVCkolhzETRxFUanZ2kmuzRByGEbBIyHjxqTUyByGMw
+@Token = CfDJ8HP9Jeg4IllClSoVbawfrq28XXQvM8hqCnNDnzmQab-gbMqvO39tZt-o-oqFoxg2sa13ZwvZbrN5iFzPAv5qnQBzA9rEgeYJ7wxbmR9qmq0YaxoukgZT98bHjjZyxdg5x-rHon9gpgIMyOOF9NgW0rT786iaaxXkGRtgkBOzBL82TRnsxoUnazytRuQa1cvqPxp1JdlN6i7Jmafe9EhjPXafEBH9qt05MPx3PubklV3FNJ7hZI-oCQPrS60V0dYIoU0KacMPSgpz2pBhSvNuMzKM8pV2neJvnvemS3x4a52j1Ge_OhqkVCUUIzEAJ8UAX-D8bnrREX9ke5dOc-ij6Wsneg2Vi3TZiImNEGtAHhhZzeiLwX-It5lzaWwWxRlhMRZXgAiYw5xCvl3pXR6cIxStsd1TeoR9tAdO5B_Un1H9qq9QG29MobKjoQBRHl7Sv2gNu20M5tY_UPtbkEDYdadC9_fvIR2rsmuR3z9rC3UQWEc4sPIXdz65_hiZEOpXabgbgosi1m01DqhRVbgLB2QePGnJSvP2Uh47d4_YbVt3QcF_2-hm02NJDXgjsHe0bouSFScKhlbSRqOsL2gQoJ8JESjYj6Nreze2o_ZsVUtTff63bjdtLEm7aQtlAJs9QNYrtY2lPFm3QBfreZV9k4yyzWCiK1bkWecObYGtiE4XlVSvXLsdw7yzDcnHQULOytvpfbpoVQltfIKF6SVQBN7q-1901NjbQK2HS3HE9sssUfpm5hRKrUwADCz-umJXz6N4M5h7jrG-ZHW7KVY_p394aBFKYUlm60d1WxyTj0djVYvZ-aTUIFWO_vNkjt2T1ZRkJwpCHCosEKOQ55li7gMcNODgM_Rhrk73v94rfFh-Sg34mg6Q-uXKDSQgG_Xf4A
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 Authorization: Bearer {{Token}}
 
@@ -35,11 +35,15 @@ Authorization: Bearer {{Token}}
 Content-Type: application/json
 
 {
-  "Name": "Spaghetti boloneze",
-  "Description": "Italian pasta with cheese",
-  "Price": 23.70,
-  "KiloCalories": 750,
-  "Category": "Georgian"
+  "Name": "Spaghetti",
+  "Description": "Italian Restaurant",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "ContactEmail": "spaghetti@gmai.com",
+  "ContactNumber": "345-1234",
+  "City": "Rome",
+  "Street": "Main Street",
+  "PostalCode": "10-010"
 }
 
 ###
@@ -66,7 +70,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "Toklika@gmail.com",
+  "email": "owner@test.com",
   "password": "Password123!"
 }
 ###
