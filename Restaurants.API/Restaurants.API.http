@@ -1,6 +1,5 @@
 @Restaurants.API_HostAddress = https://localhost:7203
-@Token = CfDJ8HP9Jeg4IllClSoVbawfrq0K8kJo_aePWYeEsTjfdHfeC9DY8byt-bOxv4_vyAln5bJSckKHKsUNpkAQvg1Q1b39k3mWen-0bDLyDybMNRxGwAAnvoaSwCPoKG1COQsOgmMaRtKtqXC9tfxDKG05U4e8Gh8DYLAcUHpFCr9R6ZsH5Qj3s5hrYkhYUg55TGyx6dbQ2Eeq0bO7wQjyw9FZkIa6FQhxZmi0S-e6vRV8Eka8YkIgxUM77GalKkksnYUICxRgDS14nD6Jimtde2TNsOKiMN9LqBghPTvh7Sm9Cx88TdTyvlAphC-c8eL7Si_ZuvEsEkRAcU2ZZapQ8HPYo_HwDO6TaTy7iSw_Db35RP1Xh2IcfbkxcPuDJT_x1F3dvq3fKGY9GA-juD0f9759mZWtTxVjUTCojR6MaJomTHvqVZdL7SIGxDZeXsS3knhvZVuyM-oVnuIKYtWhoS8Zn5AVFts6xOQt4WEmgiqDz2c6SqoKmV7PDmwsTpjPODRkHsGl5Wky6YAR0204XBnOu-P9uXBwOGvU0x_iIc6Cl7fc_pldbOiNLnyPaVCJwYZ8KYjHhKQWbC3j02K0Mgy86kGc81LZaAbfE2mbKSMyDIF4viRVsnMD3nDElA9bUu8ouC5rEIsAhRLQTSGwXAx71Q-uOyYDl0GgyMDKSb0gV9vHIPkrV25kjundVF3rhzGYHRl0jehM2fZ3fg9OMkyJRu4k2-wMaVmqEe20w71MtKjBYKq1NrrrQZDuub5x5jUtBthYlA5fKuFmz-qYcSxRgbA
-
+@Token = CfDJ8HP9Jeg4IllClSoVbawfrq0Y-wal8TvQrBHvE7wFluXGL-nMfNmSAiHwwW4o-Pw7Z5dM7zC-sIxxcVj2VdJ058LpXxG04x1t9gXULp5wp73MZeY03dfPkqL9r2LHMITCRxxuOw3dvoogLxTvd0PotfBWpsioBjJvauU_mJyfv0O3rYmEA4sGktytT2bJgjMfn4hYMxBor1eODJj-9ajzIXhJpHPP7j0UKBysWO-wIZdH4iEmWX0h4uy0zct1Vi7_UStXDhq87cVH2XqZtWCfLx1Yb3vMVYHmHSkV6fA7m-HFhZni4HTn4Wl7hw0SxsL8BodHIENEOuhfb_N2Y9iS05uh7Ju_aOKxwT8BV4_A_zePvmPnerFsnWHR7T05kOOIIUhCgtA9-J3WotHcEcjpy-j2zI6u7rdCrXWBCNI2p_AaIQtzswGgO-jpe-zlk3b9BM19Su1dEm-gSK3ZzQIJT1HXLG2CAcCLSDdc2x91RvK4Gygvi0fCuQ85q3bAhXTt6atPcYlFStDaQtMyDQJUq3DhO1KN2Uk8Ly9x3l-Jas5WD47Szy7RMcBo_LQDBbKY6JXgFJ-iS_1YKufx3f0gCEGRcKNWUlbvAzIya-Fcj9xrDVIM_MSiT2yrFSVmfVSZKz_ZgXUmIGCjJuV154sZIvnUB1eNxcbpzifqMf9bkGTuYGcovlEQPNTS93tHHcH6VP-1ud6ayDpdm02WAiYUpKxtHGKG-65jNEbAGG2AOsbHRVCkolhzETRxFUanZ2kmuzRByGEbBIyHjxqTUyByGMw
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 Authorization: Bearer {{Token}}
 
@@ -45,7 +44,8 @@ Content-Type: application/json
 
 ###
 
-GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/22
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes
+Authorization: Bearer {{Token}}
 
 ###
 
@@ -86,9 +86,11 @@ Content-Type: application/json
 
 PATCH {{Restaurants.API_HostAddress}}/api/identity/user
 Content-Type: application/json
+Authorization: Bearer {{Token}}
 
 {
-  //UpdateUserDeatailsCommand
+  "Nationality": "Italian",
+  "DateOfBirth": "2010-01-01"
 }
 
 ###
