@@ -1,5 +1,5 @@
 @Restaurants.API_HostAddress = https://localhost:7203
-@Token = CfDJ8HP9Jeg4IllClSoVbawfrq1VNjK7oFwO_sgYVA_6nVOPSBm_GlqwSUoIBW6aedj-c6Y3ayZu82WMKZ5tbHPh95wwchkEvJIN87r2eUhOlSJ0fPF2to3IW_QZxsoPyq6ShbKMTYWVEpnEpimafcObAESExLrL2BWnKn0tKqSSDBThAzyItGrELsMF9eghkVB9iUc9e3HIXaux5VN3SDOnOczU1gMU47WfBoMxL8cFCxXWjWWSosZ4oc1EV0MLCIcPMfkBML8z0Uqr1psxNIFT-vyUhb6n_DlKSzng1K9fKS8TNnaYWWAF2LwNE4nto3udoRzM0V9R-kuQIABkhFo1YEbXG6JEQY2wYNkG06F8Uejn9nJDGs7g6AIK4-neKreWRvo0yZZaFJbwnr2HSA4y1b3dgCB2vxHSVcX-Z-iZDnfFLuAags-UaDzM3aLR-FJnzSgvB0DgGs2aQLyRYlqQFejm_y34_u2GawAQ-_8IhpaWijPofCgACeg9_bgo8v9M-dPib--tRG9t7MRUxs2ssMuZExhXaal5_uKP9_rTcgtxie7Oft9LGFa5psNrO0fXhe0-9SfXuX438Uv7XkXLcSCcnSfYAAuatSq328v6iFA2_yjHwDwfyvtUOGWJhpymUprL8qh-6IeMj-Ghbo23lydXPUcisy5mPdxb7HGUXXVlmqkkDM9fjlXFSppnJHtXiepRWXfGIhp4QkvcJBuEy1obzHxl_kmQWx1ZrUb9Y1GRtqixD54KZNoCd1QX8kiuNI1QSeVFavW89F0CJQ-bygpCVBPxXlPtHQurJK5deNYE23GavJB18wqQuyCErwtbFfIlBG3SPucq-a8CFgm-IfiS45IozLbYbknhoAfWzpE2LLouluHqooLdWE8ETFYInA
+@Token = CfDJ8HP9Jeg4IllClSoVbawfrq02fAOrE1_KuZXnSTqxeTSNpp-xgmpiijFzt1FjHYhq_0vVOJvhcTilXFc1O4v7F9bvAJ6_GMg2qZFwKJzA5E3XvOLTig0gCSCMwKIo8_vpO4_OoSlae843mAh5a_hPBeQHmyxg-voZRY2Gz2-nlwBIbMr4W8Wji1UdVECd1-8ggGU5z5xaJUIk7zElgblLNh3CcjqDTzcd20xUDe-yRkvm5yuYTKE-V3tqp10NM4mVjAm00Z7eJmnDzmu3F3pILDQ_eI1E9CNubBZjae-d18L7uWBq2YPHytxixP0dWOuOmzZ9YPyS3NTrnblmEhUi8elHzA61xAWqbi6Q76tdkSpOvojbKRHTpM7nJDxb2DLIx4RyoW-PGdu5XB4i-1hZZ5V_L-vcIdzqiDU_GRhMqbFrYPGN0QGFxo4zTPK_xz1fypZwSrM1WFImtbnMfAaeaWGBsZIeOCoo_GFA7lt2moyU6jLoSKKI431QuKdKXu6Uvdw5-iBjUCUaSQtsXftGC-57oOGMc2xDxXxoqqPzusFvmisbnnYUs69Hmi4vrm4lyL7xgLMFFB_kTKoBrdGopZZE9nh-UVCILVNLsG8s2nXWz6piXDHVwhQ3W12wYJv3V3_uWX_f43K2cfDj08B7p1JoWpQ9SsiAKNjkWj5YaH9_xL4oEGYvDknSVBhfHkzLKmEApFDzuuZRrrriIs9A16cqL11q-CwsYJUoDCIWjPocQlDSS8sxwQrgKfZHJS2rL18sI4mt3lpzceFP0Df63pjo7qhO2P4x-CYDLquFm-DO
 GET {{Restaurants.API_HostAddress}}/api/restaurants
 Authorization: Bearer {{Token}}
 
@@ -37,7 +37,7 @@ Authorization: Bearer {{Token}}
 Content-Type: application/json
 
 {
-  "Name": "Spaghetti",
+  "Name": "Owner2 Restaurant2",
   "Description": "Italian Restaurant",
   "Category": "Italian",
   "HasDelivery": true,
@@ -63,7 +63,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "user@test.com",
+  "email": "owner2@test.com",
   "password": "Password123!"
 }
 ###
@@ -72,7 +72,7 @@ POST {{Restaurants.API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "owner@test.com",
+  "email": "owner2@test.com",
   "password": "Password123!"
 }
 ###
@@ -83,8 +83,8 @@ Content-Type: application/json
 
 {
   {
-  "userEmail": "admin@test.com",
-  "roleName": "Admin"
+  "userEmail": "owner2@test.com",
+  "roleName": "Owner"
 }
 }
 
@@ -108,4 +108,15 @@ Authorization: Bearer {{Token}}
   "userEmail": "Toklika@gmail.com",
   "roleName": "User"
 }
+###
+
+POST {{Restaurants.API_HostAddress}}/api/identity/userRole
+Content-Type: application/json; charset=utf-8
+Authorization: Bearer {{Token}}
+
+{
+  "UserEmail": "owner2@test.com",
+  "RoleName": "Owner"
+}
+
 ###
