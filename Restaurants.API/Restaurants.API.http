@@ -9,7 +9,6 @@ GET {{Restaurants.API_HostAddress}}/api/restaurants/3
 
 ###
 
-
 GET https://localhost:7203/api/restaurants/6
 
 ###
