@@ -40,7 +40,8 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
             .Restaurants
             .Where(r => searchPhraseLower == null
             || (r.Name.ToLower().Contains(searchPhraseLower)
-            || r.Description.ToLower().Contains(searchPhraseLower)));
+            || r.Description.ToLower().Contains(searchPhraseLower)))
+            .Skip(pageSize * (pageNumber - 1));
 
         var totalCount = await baseQuery.CountAsync();
 
@@ -61,7 +62,6 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
         }
 
         var restaurants = await baseQuery
-            .Skip(pageSize * (pageNumber - 1))
             .Take(pageSize)
             .ToListAsync();
 
