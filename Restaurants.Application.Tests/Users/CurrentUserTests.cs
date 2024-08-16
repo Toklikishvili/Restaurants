@@ -13,10 +13,10 @@ public class CurrentUserTests
     public void IsInRole_WithMachingRole_ShouldReturnTrue(string roleName)
     {
         //arrange
-        var carrentUser = new CurrentUser("2" , "Toklika@gmail.com" , [UserRoles.Admin , UserRoles.User] , null , null);
+        var currentUser = new CurrentUser("2" , "Toklika@gmail.com" , [UserRoles.Admin , UserRoles.User] , null , null);
 
         //act
-        var isInRole = carrentUser.IsInRole(roleName);
+        var isInRole = currentUser.IsInRole(roleName);
 
         //assert
 
