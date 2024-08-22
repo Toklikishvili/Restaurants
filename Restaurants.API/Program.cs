@@ -43,3 +43,5 @@ app.MapGroup("api/identity")
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
